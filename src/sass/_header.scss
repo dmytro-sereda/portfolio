@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    list-style: none;
+
+    &-item {
+      &:not(:last-of-type) {
+        margin-right: 25px;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 400;
+      transition: all 0.4s;
+      padding: 10px 14px;
+
+      &:hover,
+      &:focus-visible {
+        background-color: $color-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.numbers {
+  margin: 100px 0;
+  text-align: center;
+
+  &__container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+  }
+
+  &__item {
+    background-color: $color-background-light;
+    max-width: 333px;
+    padding: 30px 15px;
+  }
+
+  &__number {
+    font-weight: 900;
+    font-size: 90px;
+    margin-bottom: 12px;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:nth-child(1) {
+      background: linear-gradient(215deg, #f9bac9 30%, $color-secondary 70%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(115deg, #f9bac9 30%, $color-secondary 70%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(0deg, #f9bac9 30%, $color-secondary 70%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+}
