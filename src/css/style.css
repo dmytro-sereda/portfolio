@@ -23,7 +23,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 50px; }
+  padding: 30px 50px;
+  animation: FadeInDown 1s; }
 
 .logo {
   display: inline-block; }
@@ -53,7 +54,8 @@ h2 {
 
 .socials__container {
   display: flex;
-  gap: 15px; }
+  gap: 15px;
+  animation: FadeInUp 1s; }
 
 .socials__link {
   color: #fff; }
@@ -64,7 +66,8 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 13%; }
+  margin-bottom: 13%;
+  animation: FadeInLeft 1s; }
 
 .cta__text {
   font-weight: 900;
@@ -109,26 +112,68 @@ h2 {
   .numbers__item {
     background-color: #474747;
     max-width: 333px;
-    padding: 30px 15px; }
-  .numbers__number {
-    font-weight: 900;
-    font-size: 90px;
-    margin-bottom: 12px;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; }
-    .numbers__number:nth-child(1) {
+    padding: 30px 15px;
+    transition: all 1s;
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(5px); }
+    .numbers__item:nth-child(1) .numbers__number {
       background: linear-gradient(215deg, #f9bac9 30%, #dc4b6e 70%);
       background-clip: text;
       -webkit-text-fill-color: transparent; }
-    .numbers__number:nth-child(2) {
-      background: linear-gradient(115deg, #f9bac9 30%, #dc4b6e 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent; }
-    .numbers__number:nth-child(3) {
-      background: linear-gradient(0deg, #f9bac9 30%, #dc4b6e 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent; }
+    .numbers__item:nth-child(2) {
+      transition-delay: 200ms; }
+      .numbers__item:nth-child(2) .numbers__number {
+        background: linear-gradient(115deg, #f9bac9 30%, #dc4b6e 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent; }
+    .numbers__item:nth-child(3) {
+      transition-delay: 400ms; }
+      .numbers__item:nth-child(3) .numbers__number {
+        background: linear-gradient(45deg, #f9bac9 30%, #dc4b6e 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent; }
+  .numbers__number {
+    font-weight: 900;
+    font-size: 90px;
+    margin-bottom: 12px; }
   .numbers__text {
     font-size: 20px;
     font-weight: 400;
     color: #fff; }
+  .numbers-show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0); }
+
+@keyframes FadeInDown {
+  0% {
+    transform: translateY(-80px);
+    filter: blur(5px); }
+  100% {
+    transform: translateY(0);
+    filter: blur(0); } }
+
+@keyframes FadeInUp {
+  0% {
+    transform: translateY(80px);
+    filter: blur(5px); }
+  100% {
+    transform: translateY(0);
+    filter: blur(0); } }
+
+@keyframes FadeInLeft {
+  0% {
+    transform: translateX(-80px);
+    filter: blur(5px); }
+  100% {
+    transform: translateX(0);
+    filter: blur(0); } }
+
+@keyframes FadeInRight {
+  0% {
+    transform: translateX(80px);
+    filter: blur(5px); }
+  100% {
+    transform: translateX(0);
+    filter: blur(0); } }

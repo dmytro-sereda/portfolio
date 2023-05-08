@@ -13,37 +13,55 @@
     background-color: $color-background-light;
     max-width: 333px;
     padding: 30px 15px;
+    transition: all 1s;
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(5px);
+
+    &:nth-child(1) {
+      .numbers__number {
+        background: linear-gradient(215deg, #f9bac9 30%, $color-secondary 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &:nth-child(2) {
+      transition-delay: 200ms;
+
+      .numbers__number {
+        background: linear-gradient(115deg, #f9bac9 30%, $color-secondary 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &:nth-child(3) {
+      transition-delay: 400ms;
+
+      .numbers__number {
+        background: linear-gradient(45deg, #f9bac9 30%, $color-secondary 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
 
   &__number {
     font-weight: 900;
     font-size: 90px;
     margin-bottom: 12px;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    &:nth-child(1) {
-      background: linear-gradient(215deg, #f9bac9 30%, $color-secondary 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    &:nth-child(2) {
-      background: linear-gradient(115deg, #f9bac9 30%, $color-secondary 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    &:nth-child(3) {
-      background: linear-gradient(0deg, #f9bac9 30%, $color-secondary 70%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   &__text {
     font-size: 20px;
     font-weight: 400;
     color: #fff;
+  }
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
   }
 }
