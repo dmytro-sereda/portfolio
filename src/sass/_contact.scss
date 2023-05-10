@@ -1,0 +1,32 @@
+.contact {
+  h2 {
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__input,
+  &__select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 4px;
+
+    &::placeholder {
+      color: #fff;
+      opacity: 0.6;
+    }
+  }
+
+  &__btn {
+    font-size: 20px;
+  }
+}

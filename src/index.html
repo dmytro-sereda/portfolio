@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <title>Dmytro Sereda</title>
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -47,7 +47,7 @@
             High Quality Web Applications With <span>Modern Technologies</span>
           </h1>
           <p class="cta__name">by Dmytro Sereda</p>
-          <button id="cta__button" class="cta__button">Let's talk</button>
+          <button id="cta__button" class="cta__button btn">Let's talk</button>
         </div>
         <div class="socials__container">
           <a
@@ -112,8 +112,47 @@
       </div>
     </section>
     <section id="portfolio" class="portfolio"></section>
-    <section id="references" class="references"></section>
-    <section id="contact" class="contact"></section>
+    <section id="references" class="references">
+      <h2>References</h2>
+
+      <div class="references__slider">
+        <span
+          class="iconify arrow"
+          id="arrow-left"
+          data-icon="ic:outline-keyboard-arrow-left"
+          data-width="38"
+        ></span>
+        <div class="references__container"></div>
+        <span
+          class="iconify arrow"
+          id="arrow-right"
+          data-icon="ic:outline-keyboard-arrow-right"
+          data-width="38"
+        ></span>
+      </div>
+
+      <div class="dots__container">
+        <span class="dots__item"></span>
+        <span class="dots__item dots__item-active"></span>
+        <span class="dots__item"></span>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <h2>Contact me</h2>
+
+      <form class="contact__form">
+        <input placeholder="Name:" type="text" class="contact__input" />
+        <input placeholder="Email:" type="email" class="contact__input" />
+        <input placeholder="Phone:" type="phone" class="contact__input" />
+
+        <select name="purpose" class="contact__select" id="purpose">
+          <option value="job">Job opportunity</option>
+          <option value="cooperation">Cooperation</option>
+        </select>
+
+        <button class="contact__btn btn" type="submit">submit</button>
+      </form>
+    </section>
     <footer class="footer"></footer>
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>

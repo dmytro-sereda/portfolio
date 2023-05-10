@@ -47,32 +47,7 @@
   }
 
   &__button {
-    cursor: pointer;
-    display: inline-block;
-    transition: all 0.4s;
-    font-weight: 400;
-    font-size: 22px;
-    text-transform: uppercase;
-    background-color: transparent;
-    color: #fff;
-    border: none;
     max-width: 230px;
-    padding: 20px;
-    background-image: linear-gradient(
-      90deg,
-      $color-primary 0%,
-      $color-primary 37%,
-      transparent 37%
-    );
-    background-size: 300%;
-    background-position: 47%;
-
-    &:focus-visible {
-      outline: solid #fff 3px;
-    }
-
-    &:hover {
-      background-position: 0;
-    }
+    font-size: 22px;
   }
 }

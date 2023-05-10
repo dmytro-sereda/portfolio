@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "concurrently \"npm run watch:sass\" \"npm run start:server\"",
-    "watch:sass": "node-sass src/sass/main.scss src/css/style.css -w",
+    "watch:sass": "sass src/sass/main.scss src/css/style.css -w",
     "start:server": "parcel",
     "build": "parcel build"
   },
@@ -16,11 +16,12 @@
   "author": "Dmytro Sereda",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^8.0.0"
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.0.1",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
   }
 }
