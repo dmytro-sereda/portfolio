@@ -249,6 +249,8 @@ h2 {
   max-width: 775px;
   margin: 0 auto;
   color: #fff;
+  overflow: hidden;
+  position: relative;
 }
 .references__container.show {
   animation: FadeInUp 1s;
@@ -256,6 +258,14 @@ h2 {
 .references__item {
   background-color: #474747;
   padding: 20px;
+  width: 100%;
+  position: absolute;
+  transition: all 0.4s;
+  top: 0;
+  left: 0;
+}
+.references__item-active {
+  position: static;
 }
 .references__name {
   font-size: 21px;

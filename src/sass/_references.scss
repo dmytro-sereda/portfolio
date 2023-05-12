@@ -7,6 +7,8 @@
     max-width: 775px;
     margin: 0 auto;
     color: #fff;
+    overflow: hidden;
+    position: relative;
 
     &.show {
       animation: FadeInUp 1s;
@@ -16,6 +18,15 @@
   &__item {
     background-color: $color-background-light;
     padding: 20px;
+    width: 100%;
+    position: absolute;
+    transition: all 0.4s;
+    top: 0;
+    left: 0;
+
+    &-active {
+      position: static;
+    }
   }
 
   &__name {
