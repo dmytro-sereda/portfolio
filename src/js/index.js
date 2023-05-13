@@ -14,7 +14,7 @@ const sliderDotsContainer = document.querySelector(".dots__container");
 references.forEach((reference, i) => {
   const slidesMarkup = `<div class="references__item ${
     i === state.activeSlide && "references__item-active"
-  }" style="transform: translateX(${i - state.activeSlide * 100}%)">
+  }" style="transform: translateX(${(i - state.activeSlide) * 100}%)">
     <div class="references__name-container">
       <p class="references__name">${reference.name}</p>
       <a class="references__social-link" target="_blank" href="${
@@ -40,7 +40,7 @@ references.forEach((reference, i) => {
   const dostMarkup = `
   <span class="dots__item ${
     i === state.activeSlide && "dots__item-active"
-  }"></span>
+  }" data-order="${i}"></span>
   `;
 
   sliderContainer.innerHTML += slidesMarkup;
@@ -62,7 +62,6 @@ const observer = new IntersectionObserver((entries) => {
 stackElements.forEach((element) => observer.observe(element));
 sliderArrows.forEach((arrow) => observer.observe(arrow));
 observer.observe(sliderContainer);
-observer.observe(sliderDotsContainer);
 
 // CONTROL SLIDER
 const slides = document.querySelectorAll(".references__item");
@@ -96,3 +95,12 @@ function prevSlide() {
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
+
+sliderDotsContainer.addEventListener("click", (e) => {
+  // Guard clause
+  const target = e.target.closest(".dots__item");
+  if (!target) return;
+
+  const slideToGo = +target.dataset.order;
+  goToSlide(slideToGo);
+});
