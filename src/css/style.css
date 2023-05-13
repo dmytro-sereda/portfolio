@@ -20,6 +20,11 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 650px) {
+  h2 {
+    font-size: 33px;
+  }
+}
 
 .btn {
   cursor: pointer;
@@ -40,6 +45,11 @@ h2 {
 }
 .btn:hover {
   background-position: 0;
+}
+@media only screen and (max-width: 650px) {
+  .btn {
+    background-color: #635784;
+  }
 }
 
 .header {
@@ -100,6 +110,11 @@ h2 {
 .hero {
   padding: 8% 50px 0 50px;
 }
+@media only screen and (max-width: 500px) {
+  .hero {
+    padding: 50px 20px;
+  }
+}
 
 .left-section {
   display: flex;
@@ -110,6 +125,11 @@ h2 {
   display: flex;
   gap: 15px;
   animation: FadeInUp 1s;
+}
+@media only screen and (max-width: 650px) {
+  .socials__container {
+    margin: 30px auto 0 auto;
+  }
 }
 .socials__link {
   color: #fff;
@@ -124,6 +144,12 @@ h2 {
   margin-bottom: 13%;
   animation: FadeInLeft 1s;
 }
+@media only screen and (max-width: 650px) {
+  .cta__container {
+    text-align: center;
+    gap: 30px;
+  }
+}
 .cta__text {
   font-weight: 900;
   text-transform: uppercase;
@@ -131,6 +157,16 @@ h2 {
 }
 .cta__text span {
   color: #dc4b6e;
+}
+@media only screen and (max-width: 650px) {
+  .cta__text {
+    font-size: 45px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .cta__text {
+    font-size: 38px;
+  }
 }
 .cta__name {
   font-size: 22px;
@@ -141,16 +177,35 @@ h2 {
   max-width: 230px;
   font-size: 22px;
 }
+@media only screen and (max-width: 650px) {
+  .cta__button {
+    margin: 0 auto;
+  }
+}
 
 .numbers {
   margin: 100px 0;
   text-align: center;
+}
+@media only screen and (max-width: 650px) {
+  .numbers {
+    margin: 50px 0;
+  }
 }
 .numbers__container {
   max-width: 1050px;
   margin: 0 auto;
   display: flex;
   gap: 25px;
+  padding: 0 20px;
+}
+@media only screen and (max-width: 800px) {
+  .numbers__container {
+    flex-wrap: wrap;
+    row-gap: 25px;
+    column-gap: 0;
+    justify-content: space-between;
+  }
 }
 .numbers__item {
   background-color: #474747;
@@ -160,6 +215,11 @@ h2 {
   opacity: 0;
   transform: translateX(-100%);
   filter: blur(5px);
+}
+@media only screen and (max-width: 700px) {
+  .numbers__item {
+    max-width: 100%;
+  }
 }
 .numbers__item:nth-child(1) .numbers__number {
   background: linear-gradient(215deg, #f9bac9 30%, #dc4b6e 70%);
@@ -181,6 +241,11 @@ h2 {
   background: linear-gradient(45deg, #f9bac9 30%, #dc4b6e 70%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 800px) {
+  .numbers__item:nth-child(3) {
+    max-width: 100%;
+  }
 }
 .numbers__number {
   font-weight: 900;
@@ -322,6 +387,7 @@ h2 {
 .arrow {
   color: #fff;
   cursor: pointer;
+  min-width: 30px;
 }
 .arrow.show#arrow-left {
   animation: FadeInLeft 1s;

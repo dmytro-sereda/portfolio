@@ -1,5 +1,9 @@
 .hero {
   padding: 8% 50px 0 50px;
+
+  @media only screen and (max-width: 500px) {
+    padding: 50px 20px;
+  }
 }
 
 .left-section {
@@ -12,6 +16,10 @@
     display: flex;
     gap: 15px;
     animation: FadeInUp 1s;
+
+    @media only screen and (max-width: 650px) {
+      margin: 30px auto 0 auto;
+    }
   }
 
   &__link {
@@ -28,6 +36,11 @@
     gap: 20px;
     margin-bottom: 13%;
     animation: FadeInLeft 1s;
+
+    @media only screen and (max-width: 650px) {
+      text-align: center;
+      gap: 30px;
+    }
   }
 
   &__text {
@@ -37,6 +50,14 @@
 
     span {
       color: $color-secondary;
+    }
+
+    @media only screen and (max-width: 650px) {
+      font-size: 45px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-size: 38px;
     }
   }
 
@@ -49,5 +70,9 @@
   &__button {
     max-width: 230px;
     font-size: 22px;
+
+    @media only screen and (max-width: 650px) {
+      margin: 0 auto;
+    }
   }
 }

@@ -68,6 +68,7 @@
 .arrow {
   color: #fff;
   cursor: pointer;
+  min-width: 30px;
 
   &.show#arrow-left {
     animation: FadeInLeft 1s;
