@@ -1,5 +1,5 @@
 "use strict";
-import { references } from "./constants";
+import { references, projects } from "./constants";
 import { state } from "./state";
 
 // DOM SELECTIONS
@@ -9,6 +9,9 @@ const sliderArrows = document.querySelectorAll(".arrow");
 const leftArrow = document.querySelector("#arrow-left");
 const rightArrow = document.querySelector("#arrow-right");
 const sliderDotsContainer = document.querySelector(".dots__container");
+const portfolioContainer = document.querySelector(
+  ".portfolio__examples-container"
+);
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -45,6 +48,45 @@ references.forEach((reference, i) => {
 
   sliderContainer.innerHTML += slidesMarkup;
   sliderDotsContainer.innerHTML += dostMarkup;
+});
+
+// GENERATE PROJECTS SLIDER
+projects.forEach((project) => {
+  const markup = `<div class="portfolio__item">
+  <img src="${project.imageURL}" alt="Portfolio work" />
+  <div class="portfolio__item-content">
+    <div class="portfolio__item-heading">
+      <h4>Words game</h4>
+
+      <div class="portfolio__item-links">
+        ${project.links
+          .map(
+            (
+              l
+            ) => `<a href="${l.linkURL}" target="_blank" class="portfolio__item-link">
+        <span
+          class="iconify"
+          data-icon="${l.iconName}"
+          data-width="16"
+        ></span>
+      </a>`
+          )
+          .join("")}
+      </div>
+    </div>
+
+    <div class="portfolio__item-tags">
+      ${project.tags
+        .map(
+          (tag) => `
+      <span class="portfolio__item-tag">${tag}</span>
+      `
+        )
+        .join("")}
+    </div>
+  </div>
+</div>`;
+  portfolioContainer.innerHTML += markup;
 });
 
 // OBSERVER FOR STACK ANIMATION

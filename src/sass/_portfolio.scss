@@ -1,3 +1,58 @@
 .portfolio {
   position: relative;
+  padding: 30px 50px;
+  color: #fff;
+
+  &__item {
+    background-color: $color-background-light;
+    min-width: 400px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s;
+
+    &-content {
+      padding: 20px 15px;
+    }
+
+    &-heading {
+      h4 {
+        font-size: 28px;
+        text-transform: uppercase;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    &-link {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    &-tag {
+      display: inline-block;
+      background-color: $color-primary;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 300;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
 }
