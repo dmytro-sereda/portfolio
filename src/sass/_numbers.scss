@@ -1,6 +1,7 @@
 .numbers {
   margin: 100px 0;
   text-align: center;
+  position: relative;
 
   @media only screen and (max-width: 650px) {
     margin: 50px 0;
@@ -29,6 +30,7 @@
     opacity: 0;
     transform: translateX(-100%);
     filter: blur(5px);
+    z-index: 1;
 
     @media only screen and (max-width: 700px) {
       max-width: 100%;

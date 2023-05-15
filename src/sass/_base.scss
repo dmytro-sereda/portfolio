@@ -17,6 +17,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: $color-background-dark;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -60,5 +61,31 @@ h2 {
 
   @media only screen and (max-width: 650px) {
     background-color: $color-primary;
+  }
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+
+  &-red {
+    background: radial-gradient(
+      circle at center,
+      $color-secondary,
+      transparent
+    );
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    right: -50px;
+  }
+
+  &-purple {
+    background: radial-gradient(circle at center, $color-primary, transparent);
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -50px;
   }
 }

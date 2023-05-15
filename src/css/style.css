@@ -11,6 +11,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: #333;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -50,6 +51,26 @@ h2 {
   .btn {
     background-color: #635784;
   }
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+.circle-red {
+  background: radial-gradient(circle at center, #dc4b6e, transparent);
+  width: 250px;
+  height: 250px;
+  bottom: -100px;
+  right: -50px;
+}
+.circle-purple {
+  background: radial-gradient(circle at center, #635784, transparent);
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: -50px;
 }
 
 .header {
@@ -134,6 +155,9 @@ h2 {
 .socials__link {
   color: #fff;
 }
+.socials__link:focus-visible {
+  outline: 3px solid #fff;
+}
 
 .cta__container {
   color: #fff;
@@ -186,6 +210,7 @@ h2 {
 .numbers {
   margin: 100px 0;
   text-align: center;
+  position: relative;
 }
 @media only screen and (max-width: 650px) {
   .numbers {
@@ -215,6 +240,7 @@ h2 {
   opacity: 0;
   transform: translateX(-100%);
   filter: blur(5px);
+  z-index: 1;
 }
 @media only screen and (max-width: 700px) {
   .numbers__item {
@@ -302,6 +328,9 @@ h2 {
     transform: translateX(0);
     filter: blur(0);
   }
+}
+.contact {
+  padding: 0 20px;
 }
 .contact h2 {
   text-align: center;
@@ -414,6 +443,19 @@ h2 {
 }
 .dots__item-active {
   background-color: #fff;
+}
+
+.portfolio {
+  position: relative;
+}
+
+.footer {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+  padding: 30px 0;
+  margin-top: 30px;
+  border-top: 1px solid #474747;
 }
 
 /*# sourceMappingURL=style.css.map */
