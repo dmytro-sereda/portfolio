@@ -3,6 +3,11 @@
   padding: 30px 50px;
   color: #fff;
 
+  &__examples-container {
+    display: flex;
+    gap: 50px;
+  }
+
   &__item {
     background-color: $color-background-light;
     min-width: 400px;
@@ -10,6 +15,12 @@
     position: relative;
     z-index: 2;
     transition: all 0.4s;
+
+    img {
+      width: 100%;
+      max-height: 210px;
+      object-fit: cover;
+    }
 
     &-content {
       padding: 20px 15px;

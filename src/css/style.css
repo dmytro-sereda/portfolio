@@ -98,7 +98,7 @@ h2 {
     width: 100%;
     transform: translateX(100%);
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     background-color: #333;
@@ -107,6 +107,9 @@ h2 {
     justify-content: center;
     gap: 30px;
   }
+}
+.navigation__list-active {
+  transform: translateX(0);
 }
 .navigation__list-item:not(:last-of-type) {
   margin-right: 25px;
@@ -127,6 +130,50 @@ h2 {
 }
 .navigation__list-link:hover, .navigation__list-link:focus-visible {
   background-color: #635784;
+}
+
+.hamburger {
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  margin-right: 20px;
+  display: none;
+}
+.hamburger:focus-visible {
+  outline: solid 3px #fff;
+}
+.hamburger div {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  transition: all 0.3s;
+  position: relative;
+  transform-origin: 1px;
+  background-color: #fff;
+}
+@media only screen and (max-width: 1100px) {
+  .hamburger {
+    display: flex;
+  }
+}
+.hamburger-active {
+  display: flex;
+}
+.hamburger-active :first-child {
+  transform: rotate(45deg);
+}
+.hamburger-active :nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.hamburger-active :nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .hero {
@@ -241,7 +288,8 @@ h2 {
   opacity: 0;
   transform: translateX(-100%);
   filter: blur(5px);
-  z-index: 1;
+  z-index: 2;
+  position: relative;
 }
 @media only screen and (max-width: 700px) {
   .numbers__item {
@@ -451,6 +499,10 @@ h2 {
   padding: 30px 50px;
   color: #fff;
 }
+.portfolio__examples-container {
+  display: flex;
+  gap: 50px;
+}
 .portfolio__item {
   background-color: #474747;
   min-width: 400px;
@@ -458,6 +510,11 @@ h2 {
   position: relative;
   z-index: 2;
   transition: all 0.4s;
+}
+.portfolio__item img {
+  width: 100%;
+  max-height: 210px;
+  object-fit: cover;
 }
 .portfolio__item-content {
   padding: 20px 15px;

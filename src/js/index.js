@@ -12,6 +12,8 @@ const sliderDotsContainer = document.querySelector(".dots__container");
 const portfolioContainer = document.querySelector(
   ".portfolio__examples-container"
 );
+const hamburger = document.querySelector(".hamburger");
+const navigationMenu = document.querySelector(".navigation__list");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -56,7 +58,7 @@ projects.forEach((project) => {
   <img src="${project.imageURL}" alt="Portfolio work" />
   <div class="portfolio__item-content">
     <div class="portfolio__item-heading">
-      <h4>Words game</h4>
+      <h4>${project.name}</h4>
 
       <div class="portfolio__item-links">
         ${project.links
@@ -145,4 +147,11 @@ sliderDotsContainer.addEventListener("click", (e) => {
 
   const slideToGo = +target.dataset.order;
   goToSlide(slideToGo);
+});
+
+hamburger.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  hamburger.classList.toggle("hamburger-active");
+  navigationMenu.classList.toggle("navigation__list-active");
 });

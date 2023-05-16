@@ -1,4 +1,5 @@
 import wordsImage from "../assets/images/words.jpg";
+import azomImage from "../assets/images/azom.jpg";
 
 export const references = [
   {
@@ -44,6 +45,66 @@ export const references = [
 ];
 
 export const projects = [
+  {
+    name: "Words Game",
+    imageURL: wordsImage,
+    tags: ["JavaScript", "HTML5", "CSS3", "REST API"],
+    links: [
+      {
+        linkURL: "https://github.com/dmytro-sereda/words-game",
+        iconName: "mdi:github",
+      },
+      {
+        linkURL: "https://wordsgame.netlify.app",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
+  {
+    name: "Donation Form",
+    imageURL: wordsImage,
+    tags: ["React.JS", "Redux", "Stripe", "REST API", "Cypress"],
+    links: [
+      // {
+      //   linkURL: "https://github.com/dmytro-sereda/words-game",
+      //   iconName: "mdi:github",
+      // },
+      {
+        linkURL: "https://wordsgame.netlify.app",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
+  {
+    name: "AZOM Landing Page",
+    imageURL: azomImage,
+    tags: ["JavaScript", "HTML5", "SASS", "Parcel"],
+    links: [
+      {
+        linkURL: "https://github.com/dmytro-sereda/azom",
+        iconName: "mdi:github",
+      },
+      {
+        linkURL: "https://azomprod.netlify.app",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
+  {
+    name: "Words Game",
+    imageURL: wordsImage,
+    tags: ["JavaScript", "HTML5", "CSS3", "REST API"],
+    links: [
+      {
+        linkURL: "https://github.com/dmytro-sereda/words-game",
+        iconName: "mdi:github",
+      },
+      {
+        linkURL: "https://wordsgame.netlify.app",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
   {
     name: "Words Game",
     imageURL: wordsImage,
