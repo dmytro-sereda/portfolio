@@ -105,19 +105,4 @@ export const projects = [
       },
     ],
   },
-  {
-    name: "Words Game",
-    imageURL: wordsImage,
-    tags: ["JavaScript", "HTML5", "CSS3", "REST API"],
-    links: [
-      {
-        linkURL: "https://github.com/dmytro-sereda/words-game",
-        iconName: "mdi:github",
-      },
-      {
-        linkURL: "https://wordsgame.netlify.app",
-        iconName: "mdi:link-variant",
-      },
-    ],
-  },
 ];

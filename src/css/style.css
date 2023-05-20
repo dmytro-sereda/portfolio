@@ -516,6 +516,12 @@ h2 {
 .portfolio__examples-container {
   display: flex;
   gap: 50px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.portfolio__examples-container::-webkit-scrollbar {
+  display: none;
 }
 .portfolio__item {
   background-color: #474747;

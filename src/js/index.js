@@ -12,6 +12,7 @@ const sliderDotsContainer = document.querySelector(".dots__container");
 const portfolioContainer = document.querySelector(
   ".portfolio__examples-container"
 );
+// const portfolioOuter = document.querySelector(".portfolio__outer-container");
 const hamburger = document.querySelector(".hamburger");
 const navigationMenu = document.querySelector(".navigation__list");
 

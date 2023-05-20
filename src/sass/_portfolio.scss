@@ -6,6 +6,13 @@
   &__examples-container {
     display: flex;
     gap: 50px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__item {
