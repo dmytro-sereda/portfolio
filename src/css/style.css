@@ -469,10 +469,11 @@ h2 {
   align-items: center;
   max-width: 910px;
   margin: 0 auto;
+  gap: 10px;
 }
 @media only screen and (max-width: 1000px) {
   .references {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 }
 
@@ -486,6 +487,11 @@ h2 {
 }
 .arrow.show#arrow-right {
   animation: FadeInRight 1s;
+}
+@media only screen and (max-width: 600px) {
+  .arrow {
+    display: none;
+  }
 }
 
 .dots__container {
@@ -504,6 +510,12 @@ h2 {
   height: 10px;
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  .dots__item {
+    width: 15px;
+    height: 15px;
+  }
+}
 .dots__item-active {
   background-color: #fff;
 }
@@ -516,6 +528,11 @@ h2 {
 .portfolio h2 {
   padding: 0 50px;
 }
+@media only screen and (max-width: 1000px) {
+  .portfolio h2 {
+    padding: 0 20px;
+  }
+}
 .portfolio__examples-container {
   display: flex;
   gap: 50px;
@@ -526,6 +543,11 @@ h2 {
 }
 .portfolio__examples-container::-webkit-scrollbar {
   display: none;
+}
+@media only screen and (max-width: 1000px) {
+  .portfolio__examples-container {
+    padding: 0 20px;
+  }
 }
 .portfolio__item {
   background-color: #474747;
@@ -575,11 +597,6 @@ h2 {
 }
 .portfolio__item:hover {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-}
-@media only screen and (max-width: 1000px) {
-  .portfolio {
-    padding: 0 20px;
-  }
 }
 
 .footer {

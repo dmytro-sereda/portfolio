@@ -119,6 +119,9 @@ observer.observe(sliderContainer);
 const slides = document.querySelectorAll(".references__item");
 const dots = document.querySelectorAll(".dots__item");
 const maxSlide = slides.length;
+const touchThreshold = 50; // Adjust this value to set the swipe sensitivity
+let touchStartX = 0;
+let touchEndX = 0;
 
 function goToSlide(slide) {
   slides.forEach((s, i) => {
@@ -144,9 +147,29 @@ function prevSlide() {
   goToSlide(state.activeSlide);
 }
 
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  const touchDiff = touchEndX - touchStartX;
+  if (touchDiff > touchThreshold) {
+    prevSlide();
+  } else if (touchDiff < -touchThreshold) {
+    nextSlide();
+  }
+}
+
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
+sliderContainer.addEventListener("touchstart", handleTouchStart);
+sliderContainer.addEventListener("touchmove", handleTouchMove);
+sliderContainer.addEventListener("touchend", handleTouchEnd);
 
 sliderDotsContainer.addEventListener("click", (e) => {
   // Guard clause
