@@ -3,16 +3,23 @@ import { references, projects } from "./constants";
 import { state } from "./state";
 
 // DOM SELECTIONS
+// NUMBERS STACK
 const stackElements = document.querySelectorAll(".numbers__item");
+
+// REFERENCES SLIDER
 const sliderContainer = document.querySelector(".references__container");
 const sliderArrows = document.querySelectorAll(".arrow");
 const leftArrow = document.querySelector("#arrow-left");
 const rightArrow = document.querySelector("#arrow-right");
 const sliderDotsContainer = document.querySelector(".dots__container");
+
+// PORTFOLIO SLIDER
 const portfolioContainer = document.querySelector(
   ".portfolio__examples-container"
 );
 // const portfolioOuter = document.querySelector(".portfolio__outer-container");
+
+// NAVIGATION
 const hamburger = document.querySelector(".hamburger");
 const navigationMenu = document.querySelector(".navigation__list");
 
@@ -155,4 +162,17 @@ hamburger.addEventListener("click", (e) => {
 
   hamburger.classList.toggle("hamburger-active");
   navigationMenu.classList.toggle("navigation__list-active");
+});
+
+navigationMenu.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const target = e.target.closest(".navigation__list-link");
+  if (!target) return;
+
+  hamburger.classList.remove("hamburger-active");
+  navigationMenu.classList.remove("navigation__list-active");
+
+  const id = target.getAttribute("href");
+  document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 });
