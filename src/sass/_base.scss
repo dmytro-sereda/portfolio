@@ -68,6 +68,7 @@ h2 {
   position: absolute;
   border-radius: 50%;
   filter: blur(10px);
+  z-index: 1;
 
   &-red {
     background: radial-gradient(
@@ -87,5 +88,9 @@ h2 {
     height: 200px;
     bottom: -100px;
     left: -50px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    display: none;
   }
 }
