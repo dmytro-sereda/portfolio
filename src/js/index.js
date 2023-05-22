@@ -164,6 +164,23 @@ function handleTouchEnd() {
   }
 }
 
+// PARALLAX EFFECT FOR SHAPES
+const shapesContainer = document.querySelector("body");
+const shapes = document.querySelectorAll(".shape");
+const sensitivity = 0.15; // Adjust the sensitivity as needed
+
+shapesContainer.addEventListener("mousemove", (event) => {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  shapes.forEach((image, index) => {
+    const speed = (index + 1) / sensitivity;
+    const offsetX = -(mouseX / shapesContainer.offsetWidth - 0.5) * speed;
+    const offsetY = -(mouseY / shapesContainer.offsetHeight - 0.5) * speed;
+    image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  });
+});
+
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
