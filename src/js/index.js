@@ -23,6 +23,10 @@ const portfolioContainer = document.querySelector(
 const hamburger = document.querySelector(".hamburger");
 const navigationMenu = document.querySelector(".navigation__list");
 
+// CONTACT
+const ctaButton = document.querySelector(".cta__button");
+const contactForm = document.querySelector(".contact__form");
+
 // GENERATE SLIDER
 references.forEach((reference, i) => {
   const slidesMarkup = `<div class="references__item ${
@@ -215,4 +219,13 @@ navigationMenu.addEventListener("click", (e) => {
 
   const id = target.getAttribute("href");
   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+});
+
+ctaButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+});
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 });

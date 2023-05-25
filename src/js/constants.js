@@ -1,5 +1,7 @@
 import wordsImage from "../assets/images/words.jpg";
 import azomImage from "../assets/images/azom.jpg";
+import prsnlmgrImage from "../assets/images/prsnlmgr.png";
+import donationFormImage from "../assets/images/donationForm.png";
 
 export const references = [
   {
@@ -62,17 +64,17 @@ export const projects = [
   },
   {
     name: "Donation Form",
-    imageURL: wordsImage,
-    tags: ["React.JS", "Redux", "Stripe", "REST API", "Cypress"],
+    imageURL: donationFormImage,
+    tags: ["React.JS", "TypeScript", "Redux", "Stripe", "REST API", "Cypress"],
     links: [
       // {
       //   linkURL: "https://github.com/dmytro-sereda/words-game",
       //   iconName: "mdi:github",
       // },
-      {
-        linkURL: "https://wordsgame.netlify.app",
-        iconName: "mdi:link-variant",
-      },
+      // {
+      //   linkURL: "https://wordsgame.netlify.app",
+      //   iconName: "mdi:link-variant",
+      // },
     ],
   },
   {
@@ -91,16 +93,16 @@ export const projects = [
     ],
   },
   {
-    name: "Words Game",
-    imageURL: wordsImage,
-    tags: ["JavaScript", "HTML5", "CSS3", "REST API"],
+    name: "Personal Manager",
+    imageURL: prsnlmgrImage,
+    tags: ["React", "Typescript", "Redux", "Firebase", "NoSQL Database"],
     links: [
       {
-        linkURL: "https://github.com/dmytro-sereda/words-game",
+        linkURL: "https://github.com/dmytro-sereda/prsnlmgr",
         iconName: "mdi:github",
       },
       {
-        linkURL: "https://wordsgame.netlify.app",
+        linkURL: "https://prsnlmgr.netlify.app",
         iconName: "mdi:link-variant",
       },
     ],
