@@ -26,6 +26,10 @@ const navigationMenu = document.querySelector(".navigation__list");
 // CONTACT
 const ctaButton = document.querySelector(".cta__button");
 const contactForm = document.querySelector(".contact__form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const purposeSelect = document.getElementById("purpose");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -185,6 +189,14 @@ shapesContainer.addEventListener("mousemove", (event) => {
   });
 });
 
+// HELPER FUNCTIONS
+function clearContactForm() {
+  nameInput.value = "";
+  emailInput.value = "";
+  phoneInput.value = "";
+  purposeSelect.value = "job";
+}
+
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
@@ -228,4 +240,16 @@ ctaButton.addEventListener("click", (e) => {
 
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const phone = phoneInput.value;
+  const contactPurpose = purposeSelect.value;
+
+  // state.contactInfo = {
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   contactPurpose: "",
+  // };
+  clearContactForm();
 });
