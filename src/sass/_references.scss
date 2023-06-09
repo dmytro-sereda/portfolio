@@ -62,10 +62,11 @@
     align-items: center;
     max-width: 910px;
     margin: 0 auto;
+    gap: 10px;
   }
 
   @media only screen and (max-width: 1000px) {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 }
 
@@ -80,6 +81,10 @@
 
   &.show#arrow-right {
     animation: FadeInRight 1s;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 }
 
@@ -101,6 +106,11 @@
     width: 10px;
     height: 10px;
     cursor: pointer;
+
+    @media only screen and (max-width: 600px) {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &__item-active {

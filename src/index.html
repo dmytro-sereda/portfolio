@@ -87,7 +87,19 @@
           </a>
         </div>
       </div>
-      <div class="right-section"></div>
+      <div class="right-section">
+        <img
+          src="assets/images/triangle.svg"
+          alt="Pink triangle"
+          class="triangle shape"
+        />
+        <span class="square shape"></span>
+        <img
+          src="assets/images/circle.svg"
+          class="circle-shadow shape"
+          alt="White circle"
+        />
+      </div>
     </section>
     <section id="specialization" class="specialization"></section>
     <section id="numbers" class="numbers">
@@ -152,9 +164,27 @@
       <h2>Contact me</h2>
 
       <form class="contact__form">
-        <input placeholder="Name:" type="text" class="contact__input" />
-        <input placeholder="Email:" type="email" class="contact__input" />
-        <input placeholder="Phone:" type="phone" class="contact__input" />
+        <input
+          placeholder="Name:"
+          id="name"
+          type="text"
+          class="contact__input"
+          required
+        />
+        <input
+          placeholder="Email:"
+          id="email"
+          type="email"
+          class="contact__input"
+          required
+        />
+        <input
+          placeholder="Phone:"
+          id="phone"
+          type="phone"
+          class="contact__input"
+          required
+        />
 
         <select name="purpose" class="contact__select" id="purpose">
           <option value="job">Job opportunity</option>

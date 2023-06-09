@@ -1,17 +1,30 @@
 .portfolio {
   position: relative;
-  padding: 30px 50px;
+  padding: 30px 0;
   color: #fff;
+
+  h2 {
+    padding: 0 50px;
+
+    @media only screen and (max-width: 1000px) {
+      padding: 0 20px;
+    }
+  }
 
   &__examples-container {
     display: flex;
     gap: 50px;
+    padding: 0 50px;
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      padding: 0 20px;
     }
   }
 
@@ -27,6 +40,7 @@
       width: 100%;
       max-height: 210px;
       object-fit: cover;
+      object-position: 25% 5%;
     }
 
     &-content {
@@ -72,9 +86,5 @@
     &:hover {
       box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
     }
-  }
-
-  @media only screen and (max-width: 1000px) {
-    padding: 0 20px;
   }
 }

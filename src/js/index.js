@@ -3,18 +3,33 @@ import { references, projects } from "./constants";
 import { state } from "./state";
 
 // DOM SELECTIONS
+// NUMBERS STACK
 const stackElements = document.querySelectorAll(".numbers__item");
+
+// REFERENCES SLIDER
 const sliderContainer = document.querySelector(".references__container");
 const sliderArrows = document.querySelectorAll(".arrow");
 const leftArrow = document.querySelector("#arrow-left");
 const rightArrow = document.querySelector("#arrow-right");
 const sliderDotsContainer = document.querySelector(".dots__container");
+
+// PORTFOLIO SLIDER
 const portfolioContainer = document.querySelector(
   ".portfolio__examples-container"
 );
 // const portfolioOuter = document.querySelector(".portfolio__outer-container");
+
+// NAVIGATION
 const hamburger = document.querySelector(".hamburger");
 const navigationMenu = document.querySelector(".navigation__list");
+
+// CONTACT
+const ctaButton = document.querySelector(".cta__button");
+const contactForm = document.querySelector(".contact__form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const purposeSelect = document.getElementById("purpose");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -112,6 +127,9 @@ observer.observe(sliderContainer);
 const slides = document.querySelectorAll(".references__item");
 const dots = document.querySelectorAll(".dots__item");
 const maxSlide = slides.length;
+const touchThreshold = 50; // Adjust this value to set the swipe sensitivity
+let touchStartX = 0;
+let touchEndX = 0;
 
 function goToSlide(slide) {
   slides.forEach((s, i) => {
@@ -137,9 +155,54 @@ function prevSlide() {
   goToSlide(state.activeSlide);
 }
 
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  const touchDiff = touchEndX - touchStartX;
+  if (touchDiff > touchThreshold) {
+    prevSlide();
+  } else if (touchDiff < -touchThreshold) {
+    nextSlide();
+  }
+}
+
+// PARALLAX EFFECT FOR SHAPES
+const shapesContainer = document.querySelector("body");
+const shapes = document.querySelectorAll(".shape");
+const sensitivity = 0.15; // Adjust the sensitivity as needed
+
+shapesContainer.addEventListener("mousemove", (event) => {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  shapes.forEach((image, index) => {
+    const speed = (index + 1) / sensitivity;
+    const offsetX = -(mouseX / shapesContainer.offsetWidth - 0.5) * speed;
+    const offsetY = -(mouseY / shapesContainer.offsetHeight - 0.5) * speed;
+    image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  });
+});
+
+// HELPER FUNCTIONS
+function clearContactForm() {
+  nameInput.value = "";
+  emailInput.value = "";
+  phoneInput.value = "";
+  purposeSelect.value = "job";
+}
+
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
+sliderContainer.addEventListener("touchstart", handleTouchStart);
+sliderContainer.addEventListener("touchmove", handleTouchMove);
+sliderContainer.addEventListener("touchend", handleTouchEnd);
 
 sliderDotsContainer.addEventListener("click", (e) => {
   // Guard clause
@@ -155,4 +218,38 @@ hamburger.addEventListener("click", (e) => {
 
   hamburger.classList.toggle("hamburger-active");
   navigationMenu.classList.toggle("navigation__list-active");
+});
+
+navigationMenu.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const target = e.target.closest(".navigation__list-link");
+  if (!target) return;
+
+  hamburger.classList.remove("hamburger-active");
+  navigationMenu.classList.remove("navigation__list-active");
+
+  const id = target.getAttribute("href");
+  document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+});
+
+ctaButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+});
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const phone = phoneInput.value;
+  const contactPurpose = purposeSelect.value;
+
+  // state.contactInfo = {
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   contactPurpose: "",
+  // };
+  clearContactForm();
 });

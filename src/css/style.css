@@ -187,6 +187,8 @@ h2 {
 
 .hero {
   padding: 8% 50px 0 50px;
+  display: flex;
+  justify-content: space-between;
 }
 @media only screen and (max-width: 500px) {
   .hero {
@@ -197,6 +199,12 @@ h2 {
 .left-section {
   display: flex;
   flex-direction: column;
+}
+
+.right-section {
+  position: relative;
+  align-self: end;
+  animation: FadeInRight 1s;
 }
 
 .socials__container {
@@ -222,7 +230,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 13%;
+  margin-bottom: 25%;
   animation: FadeInLeft 1s;
 }
 @media only screen and (max-width: 650px) {
@@ -261,6 +269,35 @@ h2 {
 @media only screen and (max-width: 650px) {
   .cta__button {
     margin: 0 auto;
+  }
+}
+
+.triangle {
+  position: absolute;
+  bottom: 110px;
+  right: 250px;
+}
+
+.circle-shadow {
+  bottom: 30px;
+  right: 0;
+  position: absolute;
+}
+
+.square {
+  top: -150px;
+  right: 200px;
+  position: absolute;
+  width: 175px;
+  height: 175px;
+  background-color: #635784;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1200px) {
+  .shape {
+    display: none;
   }
 }
 
@@ -469,10 +506,11 @@ h2 {
   align-items: center;
   max-width: 910px;
   margin: 0 auto;
+  gap: 10px;
 }
 @media only screen and (max-width: 1000px) {
   .references {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 }
 
@@ -486,6 +524,11 @@ h2 {
 }
 .arrow.show#arrow-right {
   animation: FadeInRight 1s;
+}
+@media only screen and (max-width: 600px) {
+  .arrow {
+    display: none;
+  }
 }
 
 .dots__container {
@@ -504,24 +547,44 @@ h2 {
   height: 10px;
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  .dots__item {
+    width: 15px;
+    height: 15px;
+  }
+}
 .dots__item-active {
   background-color: #fff;
 }
 
 .portfolio {
   position: relative;
-  padding: 30px 50px;
+  padding: 30px 0;
   color: #fff;
+}
+.portfolio h2 {
+  padding: 0 50px;
+}
+@media only screen and (max-width: 1000px) {
+  .portfolio h2 {
+    padding: 0 20px;
+  }
 }
 .portfolio__examples-container {
   display: flex;
   gap: 50px;
+  padding: 0 50px;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .portfolio__examples-container::-webkit-scrollbar {
   display: none;
+}
+@media only screen and (max-width: 1000px) {
+  .portfolio__examples-container {
+    padding: 0 20px;
+  }
 }
 .portfolio__item {
   background-color: #474747;
@@ -535,6 +598,7 @@ h2 {
   width: 100%;
   max-height: 210px;
   object-fit: cover;
+  object-position: 25% 5%;
 }
 .portfolio__item-content {
   padding: 20px 15px;
@@ -571,11 +635,6 @@ h2 {
 }
 .portfolio__item:hover {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-}
-@media only screen and (max-width: 1000px) {
-  .portfolio {
-    padding: 0 20px;
-  }
 }
 
 .footer {
