@@ -14,7 +14,8 @@
   }
 
   &__input,
-  &__select {
+  &__select,
+  &__textarea {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fff;
@@ -26,6 +27,11 @@
       color: #fff;
       opacity: 0.6;
     }
+  }
+
+  &__textarea {
+    border: 2px solid #fff;
+    padding: 10px;
   }
 
   &__btn {
