@@ -30,6 +30,7 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const purposeSelect = document.getElementById("purpose");
+const messageInput = document.getElementById("message");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -243,13 +244,21 @@ contactForm.addEventListener("submit", (e) => {
   const name = nameInput.value;
   const email = emailInput.value;
   const phone = phoneInput.value;
-  const contactPurpose = purposeSelect.value;
+  const purpose = purposeSelect.value;
+  const message = messageInput.value;
 
-  // state.contactInfo = {
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   contactPurpose: "",
-  // };
-  clearContactForm();
+  fetch("https://api.apispreadsheets.com/data/q4j8Qe7hkxiqhID3/", {
+    method: "POST",
+    body: JSON.stringify({
+      data: {
+        name,
+        email,
+        phone,
+        purpose,
+        message,
+      },
+    }),
+  }).then((res) => console.log(res));
+
+  // clearContactForm();
 });
