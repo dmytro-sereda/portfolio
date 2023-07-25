@@ -196,6 +196,7 @@ function clearContactForm() {
   emailInput.value = "";
   phoneInput.value = "";
   purposeSelect.value = "job";
+  messageInput.value = "";
 }
 
 // EVENT LISTENERS
@@ -258,7 +259,13 @@ contactForm.addEventListener("submit", (e) => {
         message,
       },
     }),
-  }).then((res) => console.log(res));
-
-  // clearContactForm();
+  })
+    .then((res) => {
+      if (res.status === 201) {
+        clearContactForm();
+      } else {
+        throw new Error();
+      }
+    })
+    .catch((err) => alert("Something went wrong, please try again"));
 });
