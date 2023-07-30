@@ -248,7 +248,7 @@ contactForm.addEventListener("submit", (e) => {
   const purpose = purposeSelect.value;
   const message = messageInput.value;
 
-  fetch("https://api.apispreadsheets.com/data/q4j8Qe7hkxiqhID3/", {
+  fetch(process.env.SPREADSHEETS_API_ENDPOINT, {
     method: "POST",
     body: JSON.stringify({
       data: {
