@@ -650,4 +650,38 @@ h2 {
   border-top: 1px solid #474747;
 }
 
+.popup {
+  width: 400px;
+  background-color: #474747;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  display: none;
+}
+.popup__button {
+  background-color: #635784;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.popup__button:focus-visible {
+  outline: solid 2px #fff;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+}
+
 /*# sourceMappingURL=style.css.map */

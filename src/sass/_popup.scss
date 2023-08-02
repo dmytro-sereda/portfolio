@@ -1,0 +1,35 @@
+.popup {
+  width: 400px;
+  background-color: $color-background-light;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  display: none;
+
+  &__button {
+    background-color: $color-primary;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: solid 2px #fff;
+    }
+  }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: $color-background-dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+}
