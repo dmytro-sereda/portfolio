@@ -437,7 +437,7 @@ h2 {
   max-width: 500px;
   margin: 0 auto;
 }
-.contact__input, .contact__select {
+.contact__input, .contact__select, .contact__textarea {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #fff;
@@ -445,9 +445,13 @@ h2 {
   color: #fff;
   padding-bottom: 4px;
 }
-.contact__input::placeholder, .contact__select::placeholder {
+.contact__input::placeholder, .contact__select::placeholder, .contact__textarea::placeholder {
   color: #fff;
   opacity: 0.6;
+}
+.contact__textarea {
+  border: 2px solid #fff;
+  padding: 10px;
 }
 .contact__btn {
   font-size: 20px;

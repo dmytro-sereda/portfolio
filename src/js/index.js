@@ -30,6 +30,7 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const purposeSelect = document.getElementById("purpose");
+const messageInput = document.getElementById("message");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -195,6 +196,7 @@ function clearContactForm() {
   emailInput.value = "";
   phoneInput.value = "";
   purposeSelect.value = "job";
+  messageInput.value = "";
 }
 
 // EVENT LISTENERS
@@ -243,13 +245,27 @@ contactForm.addEventListener("submit", (e) => {
   const name = nameInput.value;
   const email = emailInput.value;
   const phone = phoneInput.value;
-  const contactPurpose = purposeSelect.value;
+  const purpose = purposeSelect.value;
+  const message = messageInput.value;
 
-  // state.contactInfo = {
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   contactPurpose: "",
-  // };
-  clearContactForm();
+  fetch(process.env.SPREADSHEETS_API_ENDPOINT, {
+    method: "POST",
+    body: JSON.stringify({
+      data: {
+        name,
+        email,
+        phone,
+        purpose,
+        message,
+      },
+    }),
+  })
+    .then((res) => {
+      if (res.status === 201) {
+        clearContactForm();
+      } else {
+        throw new Error();
+      }
+    })
+    .catch((err) => alert("Something went wrong, please try again"));
 });
