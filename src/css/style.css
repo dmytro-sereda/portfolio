@@ -684,4 +684,8 @@ h2 {
   opacity: 0.9;
 }
 
+.active {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */
