@@ -17,7 +17,6 @@ const sliderDotsContainer = document.querySelector(".dots__container");
 const portfolioContainer = document.querySelector(
   ".portfolio__examples-container"
 );
-// const portfolioOuter = document.querySelector(".portfolio__outer-container");
 
 // NAVIGATION
 const hamburger = document.querySelector(".hamburger");
@@ -31,6 +30,11 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const purposeSelect = document.getElementById("purpose");
 const messageInput = document.getElementById("message");
+
+// POPUP
+const popup = document.querySelector(".popup");
+const overlay = document.querySelector(".overlay");
+const closePopupButton = document.querySelector(".popup__close");
 
 // GENERATE SLIDER
 references.forEach((reference, i) => {
@@ -199,6 +203,11 @@ function clearContactForm() {
   messageInput.value = "";
 }
 
+function togglePopup() {
+  popup.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
 // EVENT LISTENERS
 leftArrow.addEventListener("click", prevSlide);
 rightArrow.addEventListener("click", nextSlide);
@@ -267,5 +276,7 @@ contactForm.addEventListener("submit", (e) => {
         throw new Error();
       }
     })
-    .catch((err) => alert("Something went wrong, please try again"));
+    .catch((err) => togglePopup());
 });
+
+closePopupButton.addEventListener("click", togglePopup);

@@ -48,6 +48,36 @@ export const references = [
 
 export const projects = [
   {
+    name: "Personal Manager",
+    imageURL: prsnlmgrImage,
+    tags: ["React", "Typescript", "Redux", "Firebase", "NoSQL Database"],
+    links: [
+      {
+        linkURL: "https://github.com/dmytro-sereda/prsnlmgr",
+        iconName: "mdi:github",
+      },
+      {
+        linkURL: "https://prsnlmgr.netlify.app",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
+  {
+    name: "Donation Form",
+    imageURL: donationFormImage,
+    tags: ["React.JS", "TypeScript", "Redux", "Stripe", "REST API", "Cypress"],
+    links: [
+      // {
+      //   linkURL: "https://github.com/dmytro-sereda/words-game",
+      //   iconName: "mdi:github",
+      // },
+      {
+        linkURL: "https://app-hsfdonation.heartandstroke.ca/?type=cont",
+        iconName: "mdi:link-variant",
+      },
+    ],
+  },
+  {
     name: "Words Game",
     imageURL: wordsImage,
     tags: ["JavaScript", "HTML5", "CSS3", "REST API"],
@@ -63,21 +93,6 @@ export const projects = [
     ],
   },
   {
-    name: "Donation Form",
-    imageURL: donationFormImage,
-    tags: ["React.JS", "TypeScript", "Redux", "Stripe", "REST API", "Cypress"],
-    links: [
-      // {
-      //   linkURL: "https://github.com/dmytro-sereda/words-game",
-      //   iconName: "mdi:github",
-      // },
-      // {
-      //   linkURL: "https://wordsgame.netlify.app",
-      //   iconName: "mdi:link-variant",
-      // },
-    ],
-  },
-  {
     name: "AZOM Landing Page",
     imageURL: azomImage,
     tags: ["JavaScript", "HTML5", "SASS", "Parcel"],
@@ -88,21 +103,6 @@ export const projects = [
       },
       {
         linkURL: "https://azomprod.netlify.app",
-        iconName: "mdi:link-variant",
-      },
-    ],
-  },
-  {
-    name: "Personal Manager",
-    imageURL: prsnlmgrImage,
-    tags: ["React", "Typescript", "Redux", "Firebase", "NoSQL Database"],
-    links: [
-      {
-        linkURL: "https://github.com/dmytro-sereda/prsnlmgr",
-        iconName: "mdi:github",
-      },
-      {
-        linkURL: "https://prsnlmgr.netlify.app",
         iconName: "mdi:link-variant",
       },
     ],

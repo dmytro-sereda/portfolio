@@ -18,6 +18,7 @@
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    align-items: start;
 
     &::-webkit-scrollbar {
       display: none;
