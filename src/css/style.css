@@ -581,6 +581,7 @@ h2 {
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  align-items: start;
 }
 .portfolio__examples-container::-webkit-scrollbar {
   display: none;
